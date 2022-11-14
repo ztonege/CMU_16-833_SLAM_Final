@@ -1,0 +1,15 @@
+name: tartanvo
+channels:
+  - conda-forge
+  - anaconda
+  - defaults
+
+dependencies:
+  - python
+  - pytorch=1.4.0
+  - opencv=4.2.0
+  - cupy=6.7.0
+  - tqdm
+  - numpy
+  - matplotlib
+  - scipy=1.5.2
