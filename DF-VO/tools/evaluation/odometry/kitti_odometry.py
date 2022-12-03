@@ -684,6 +684,15 @@ class KittiEvalOdom():
             print("RPE (m): ", rpe_trans)
             print("RPE (deg): ", rpe_rot * 180 /np.pi)
 
+            poses_aligned = []
+            for i in range(len(poses_result)):
+                poses_aligned.append(poses_result[i].flatten()[:12])
+            poses_aligned = np.array(poses_aligned)
+            aligned_dir = os.path.join(result_dir, "aligned")
+            if not os.path.exists(aligned_dir):
+                os.makedirs(aligned_dir)
+            np.savetxt(os.path.join(aligned_dir, "poses.txt"), poses_aligned)
+
             # Plotting
             self.plot_trajectory(poses_gt, poses_result, i)
             self.plot_error(avg_segment_errs, i)
