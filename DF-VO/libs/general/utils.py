@@ -246,8 +246,8 @@ def load_kitti_odom_intrinsics(file_name, new_h, new_w):
     Returns:
         intrinsics (dict): each element contains [cx, cy, fx, fy]
     """
-    raw_img_h = 370.0
-    raw_img_w = 1226.0
+    raw_img_h = 376.0
+    raw_img_w = 672.0
     intrinsics = {}
     with open(file_name, 'r') as f:
         s = f.readlines()
